@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160128031008) do
   create_table "cards", force: :cascade do |t|
     t.string   "rank"
     t.string   "suit"
+    t.string   "rule"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
