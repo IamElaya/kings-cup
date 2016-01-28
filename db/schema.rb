@@ -17,15 +17,16 @@ ActiveRecord::Schema.define(version: 20160128031008) do
     t.string   "rank"
     t.string   "suit"
     t.string   "rule"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.boolean  "used_at",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "games", force: :cascade do |t|
     t.integer  "current_player", default: 1
     t.boolean  "game_over",      default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "players", force: :cascade do |t|
@@ -42,8 +43,12 @@ ActiveRecord::Schema.define(version: 20160128031008) do
     t.integer  "player_id"
     t.integer  "game_id"
     t.integer  "card_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "turns", ["card_id"], name: "index_turns_on_card_id"
+  add_index "turns", ["game_id"], name: "index_turns_on_game_id"
+  add_index "turns", ["player_id"], name: "index_turns_on_player_id"
 
 end

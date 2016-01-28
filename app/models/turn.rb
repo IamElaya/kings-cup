@@ -13,12 +13,17 @@ class Turn < ActiveRecord::Base
 
 
   def pick_a_card
-   if @current_card 
-    @current_card.destroy
 
-    @current_card = cards.order("RANDOM()").first
+   @current_card = cards.where("used_at = ?", false ).order("RANDOM()").first
+   self.card_id = @current_card.id
+   self.save!
+   @current_card.used_at = true
+   @current_card.save!
+
+   
   end
-  end
+
+
 
   def current_player
     game.current_player += 1
