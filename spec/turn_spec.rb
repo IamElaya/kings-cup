@@ -33,6 +33,15 @@ describe Turn do
   end
 
   describe "#pick_a_card" do
+
+    it 'should pick a card' do
+      @game = Game.create
+      @game.players.create
+      @game.players.create
+      @game.turns.create
+
+
+
   end
 
 
