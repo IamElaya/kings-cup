@@ -32,9 +32,11 @@ ActiveRecord::Schema.define(version: 20160128031008) do
     t.integer  "game_id"
     t.string   "name"
     t.integer  "kings"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "players", ["game_id"], name: "index_players_on_game_id"
 
   create_table "turns", force: :cascade do |t|
     t.integer  "player_id"
