@@ -5,33 +5,31 @@ class Turn < ActiveRecord::Base
   has_many :cards
 
   before_create :pick_a_card
-  after_create :current_player
+  after_create :set_current_player
 
-  # protected
 
-  def 
 
+  protected
 
   def pick_a_card
-
-   @current_card = cards.where("used_at = ?", false ).order("RANDOM()").first
-   self.card_id = @current_card.id
-   self.save!
-   @current_card.used_at = true
-   @current_card.save!
-
-   
+     @current_card = cards.where("used_at = ?", false ).order("RANDOM()").first
+     self.card_id = @current_card.id
+     self.save!
+     @current_card.used_at = true
+     @current_card.save!
   end
 
-
-
-   def current_player
-    if game.current_player < player.length
+  def set_current_player
+    if game.current_player < game.players.count
       game.current_player += 1
       game.save!
+      self.player_id = game.current_player
+      self.save!
     else
       game.current_player = 1
       game.save!
+      self.player_id = 1
+      self.save!
     end
   end
 
