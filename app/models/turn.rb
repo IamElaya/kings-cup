@@ -25,9 +25,14 @@ class Turn < ActiveRecord::Base
 
 
 
-  def current_player
-    game.current_player += 1
+   def current_player
+    if game.current_player < player.length
+      game.current_player += 1
+      game.save!
+    else
+      game.current_player = 1
+      game.save!
+    end
   end
-
 
 end
