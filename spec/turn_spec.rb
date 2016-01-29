@@ -10,7 +10,7 @@ describe Turn do
       @game.players.create
       @card1 = Card.create
       @turn = @game.turns.create
-      expect(@game.current_player).to be(2)
+      expect(@game.current_player).to be(1)
     end 
 
      it 'should go back to player 1 after all players took a turn' do
@@ -31,7 +31,7 @@ describe Turn do
       @game.players.create
       @card1 = Card.create
       @turn = @game.turns.create
-      expect(@turn.player_id).to be(2)
+      expect(@turn.player_id).to be(1)
     end
   end
 
@@ -39,16 +39,22 @@ describe Turn do
 
     it 'should pick a card' do
       @game = Game.create
-      @card1 = Card.create
-      @card2 = Card.create
-      @card3 = Card.create
-      @card4 = Card.create
-      @card5 = Card.create
-      @card6 = Card.create
-      @card7 = Card.create
       @turn = @game.turns.create
-      expect(@turn.pick_a_card.used_at).to eql(true)
+      @turn.pick_a_card
+      expect(@turn.card.used_at).to eql(true)
     end
+
+    #  it 'should not be able to pick a card if there is none left' do
+    #   @game = Game.create
+    #   @card1 = Card.create
+    #   @card2 = Card.create
+    #   @card1.used_at = true
+    #   @card2.used_at = true
+    #   @card1.save
+    #   @card2.save
+    #   @turn = @game.turns.create
+    #   expect(@turn.pick_a_card).to eql(nil)
+    # end
   end
 
 end

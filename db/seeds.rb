@@ -1,3 +1,5 @@
+   
+def create_deck
    field_names = ['rank','suit','rule']
     failure_count = 0 
     Card.transaction do 
@@ -18,3 +20,4 @@
     end
     failures = failure_count > 0 ? "(failed to create #{failure_count} card records)" : ''
     puts "\nDone #{failures}\n\n"
+  end

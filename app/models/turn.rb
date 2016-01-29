@@ -2,9 +2,11 @@ class Turn < ActiveRecord::Base
 
   belongs_to :player
   belongs_to :game
-  has_many :cards
+  has_one :card
 
-  before_create :pick_a_card
+  # validates :game_id, presence: true
+  # validates :card_id, presence: true
+  # before_create :pick_a_card
   after_create :set_current_player
 
 
@@ -12,14 +14,14 @@ class Turn < ActiveRecord::Base
   # protected
 
   def pick_a_card
-     @current_card = Card.where("used_at = ?", false ).order("RANDOM()").first
-    
-     @current_card.used_at = true
-     @current_card.save!
-       # self.card_id = @current_card.id
-     # self.save!
-     @current_card
-   
+     self.card = Card.where("used_at = ?", false ).order("RANDOM()").first
+     if self.card == nil
+      puts "Game is over"
+     else
+       self.card.used_at = true
+       self.card.save!
+      return self.card
+     end
   end
 
   def set_current_player
