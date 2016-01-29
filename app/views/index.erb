@@ -1,0 +1,73 @@
+
+
+<!DOCTYPE html>
+<!-- <html>
+<head>
+  <title></title>
+</head>
+<body>
+<div class="row">
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+</div>
+<div class="row">
+  <div class="col-md-8">.col-md-8</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-6">.col-md-6</div>
+  <div class="col-md-6">.col-md-6</div>
+</div>
+</body>
+</html> -->
+
+<h1>Welcome To Kings Cup Game</h1>
+
+<% if !current_game %>
+  <form action='/game' method = "post">
+  <p> Select Number of players</p>
+    <select name="num_of_players"> 
+       <option value="1">1</option>
+       <option value="2">2</option>
+       <option value="3">3</option>
+       <option value="4">4</option>
+       <option value="5">5</option>
+       <option value="6">6</option>
+       <option value="7">7</option>
+       <option value="8">8</option>
+    </select>
+    <button type="submit">Lets Get Drunk</button>
+  </form>
+<% end %>
+
+<!--  -->
+<% if current_game %>
+  <form action="/game/players" method="post">
+    <% @game.players.each_with_index do |player, idx| %>
+      <p>
+        <label for="player-<%= player.id %>-name">Player <%= idx + 1 %> name:</label>
+        <input id="player-<%= player.id %>-name" name="<%= player.id %>" />
+      </p>
+    <% end %>
+    <p>
+      <button>Start Game</button>
+    </p>
+  </form> 
+<% end %>
+
+
