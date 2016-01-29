@@ -1,5 +1,17 @@
 div.gameboard { 
   	background: url(/images/poker_table.jpg) no-repeat; 
-	background-size: 100% auto;
-	padding-bottom: 50%;
+	background-size: cover;
+	width: 100%
+}
+.row li {
+  width: 33.3%;
+  float: left;
+}
+
+img .avatar {
+  border: 0 none;
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
 }
