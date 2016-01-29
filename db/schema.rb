@@ -43,15 +43,14 @@ ActiveRecord::Schema.define(version: 20160128031008) do
   add_index "players", ["game_id"], name: "index_players_on_game_id"
 
   create_table "turns", force: :cascade do |t|
-    t.integer  "player_id"
+    t.integer  "player_id",  default: 0
     t.integer  "game_id"
     t.integer  "card_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "turns", ["card_id"], name: "index_turns_on_card_id"
   add_index "turns", ["game_id"], name: "index_turns_on_game_id"
-  add_index "turns", ["player_id"], name: "index_turns_on_player_id"
 
 end

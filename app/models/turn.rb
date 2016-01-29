@@ -40,8 +40,8 @@ class Turn < ActiveRecord::Base
     end
   end
 
-  def increment_player_id
-    self.player_id = game.current_player
-  end
+  # def increment_player_id
+  #   self.player_id = game.current_player
+  # end
 
 end
