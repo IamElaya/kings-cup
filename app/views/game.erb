@@ -6,7 +6,10 @@
 <body>
 
 <header>
-		<h1>King's Cup: <small>drinking with friends!</small></h1>
+<nav class="navbar navbar-inverse">
+	<h1>King's Cup: <small>drinking with friends!</small></h1>
+</nav>
+		
 </head>
 </header>
 
@@ -24,20 +27,20 @@
 				</div>
 		      </li>
 		      <li>
-		        <div class="col-md-3">
-					<img src="http://placehold.it/150x100" alt="Responsive image" id="avatar" />
+		        <div class="col-md-3 avatar">
+					<img src="http://placehold.it/150x100" alt="Responsive image"/>
 					<p>name</p>
 				</div>
 		      </li>
 		      <li>
-		        <div class="col-md-3">
-					<img src="http://placehold.it/150x100" alt="Responsive image" id="avatar" />
+		        <div class="col-md-3 avatar">
+					<img src="http://placehold.it/150x100" alt="Responsive image" />
 					<p>name</p>
 				</div>
 		      </li>
 		      <li>
-		        <div class="col-md-3">
-					<img src="http://placehold.it/150x100" alt="Responsive image" id="avatar" />
+		        <div class="col-md-3 avatar">
+					<img src="http://placehold.it/150x100" alt="Responsive image" />
 					<p>name</p>
 				</div>
 		      </li>
@@ -48,12 +51,13 @@
 	  <div id="middle-row">
 	    <ul>
 	      <li>
-	        <div class="col-md-3" id="avatar">
+	        <div class="col-md-3 card">
 				<img src="http://placehold.it/150x100" alt="Responsive image" >
+				<button type="button" class="btn btn-danger">Pull a Card</button>
 			</div>
 	      </li>
 	      <li>
-	        <div class="col-md-3" id="avatar">
+	        <div class="col-md-3 card">
 				<img src="http://placehold.it/150x100" alt="Responsive image" />
 			</div>
 	      </li>
@@ -64,25 +68,25 @@
 	  <div id="small-img">
 	    <ul>
 	      <li>
-	        <div class="col-md-3" id="avatar">
+	        <div class="col-md-3 avatar">
 	        	<p>name</p>
 				<img src="http://placehold.it/150x100" alt="Responsive image" /> 
 			</div>
 	      </li>
 	      <li>
-	        <div class="col-md-3" id="avatar">
+	        <div class="col-md-3 avatar">
 	        	<p>name</p>
 				<img src="http://placehold.it/150x100"  alt="Responsive image"/>
 			</div>
 	      </li>
 	      <li>
-	        <div class="col-md-3" id="avatar">
+	        <div class="col-md-3 avatar">
 	        	<p>name</p>
 				<img src="http://placehold.it/150x100" alt="Responsive image" />
 			</div>
 	      </li>
 	      <li>
-	        <div class="col-md-3" id="avatar">
+	        <div class="col-md-3 avatar">
 	        	<p>name</p>
 				<img src="http://placehold.it/150x100"  alt="Responsive image"  />
 			</div>
@@ -91,11 +95,17 @@
 	  </div>
 	</div>
 </div>
-
   </section>
 
-  <aside id="sidebar">
 
+  <aside id="sidebar">
+  	<ul class="nav nav-tabs">
+  <li role="presentation"><a href="#">
+  	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  RULES</a></li>
+</ul>
+	<p>END CURRENT GAME?</p>
+	<button type="button" class="btn btn-danger"></button>
   </aside>
 
 </main>
