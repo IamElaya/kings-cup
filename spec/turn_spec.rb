@@ -8,8 +8,8 @@ describe Turn do
       @game.players.create
       @game.players.create
       @game.players.create
-      @card1 = Card.create
       @turn = @game.turns.create
+      @turn.set_current_player
       expect(@game.current_player).to be(1)
     end 
 
@@ -18,9 +18,9 @@ describe Turn do
       @game.players.create
       @game.players.create
       @game.players.create
-      @card1 = Card.create
       @game.current_player = 3
       @turn = @game.turns.create
+      @turn.set_current_player
       expect(@game.current_player).to be(1)
     end
 
@@ -29,10 +29,27 @@ describe Turn do
       @game.players.create
       @game.players.create
       @game.players.create
-      @card1 = Card.create
       @turn = @game.turns.create
-      expect(@turn.player_id).to be(1)
+      @turn.set_current_player
+      expect(@game.current_player).to be(1)
     end
+
+    #  it 'should increment player id' do
+    #   @game = Game.create
+    #   @game.players.create
+    #   @game.players.create
+    #   @turn1 = @game.turns.create
+    #   @turn1.set_current_player
+    #   @turn1.increment_player_id
+    #   @turn2 = @game.turns.create
+    #   @turn2.set_current_player
+    #   @turn2.increment_player_id
+    #   @turn3 = @game.turns.create
+    #   @turn3.set_current_player
+    #   @turn3.increment_player_id
+    #   expect(@turn3.player_id).to be(3)
+    # end
+
   end
 
   describe "#pick_a_card" do
