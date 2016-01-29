@@ -100,12 +100,64 @@
 
   <aside id="sidebar">
   	<ul class="nav nav-tabs">
-  <li role="presentation"><a href="#">
-  	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-  RULES</a></li>
+  <li role="presentation"><a href="#" onclick="toggle_visibility('foo');">RULES:</a>
+<div id="foo" style="display: none">
+1.) Ace: Snake-Eyes
+ Call anyone snake eyes in the game. No one can look at the person with snake eyes until another ace is picked or they have a drink.
+<br>
+2.)2: YOU 
+ Drawing player picks a person from the circle who has to sip 
+<br>
+3.) 3: ME
+Drawing player has to sip!
+<br>
+4.) 4: Whores
+ All girls have a sip
+<br>
+5.) 5: Bust-A-Jive
+Pick a dance move. The next person has to do that dance move and add to it. This continues until someone screws up and must sip  
+<br>
+6.)6: Dicks
+All the guys have a sip 
+<br>
+7.) 7: Seven-Heaven
+ All players point a finger to the sky.Last player to do must sip
+<br>
+8.) 8: Mate
+Whenever you drink they must sip 
+<br>
+9.) 9: Nine-Rhyme
+Pick a word. Go around the circle with each person rhyming. First person to repeat a word or not have a word must sip. 
+<br>
+10.) 10: Categories
+Pick a category.Go around the circle naming things in that category.First person to repeat or not answer must sip
+<br>
+11.) Jack: Never-Have-I-Ever
+ everybody puts up 3 to 5 fingers and drawing player says something they haven't done before and then go around the circle. The first person with all their fingers down must sip 
+<br>
+12.) Queen: Question-Master
+Whenever you ask a question to someone they must answer with a question or they sip 
+<br>
+13.) Kings Cup!
+Make a rule and whenever someone breaks that rule from now on they must sip.
+</div>
 </ul>
-	<p>END CURRENT GAME?</p>
+	<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script>
+	<p>QUIT GAME</p>
 	<button type="button" class="btn btn-danger"></button>
+	<p>START OVER</p>
+	<button type="button" class="btn btn-danger"></button>
+
   </aside>
 
 </main>
