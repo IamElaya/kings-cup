@@ -1,5 +1,5 @@
 div.gameboard { 
-  background: url(/images/poker_table.jpg) 50% 50%;
+  background: url(images/poker_table.jpg) 50% 50%;
   background-size: cover;
   	width: 100%;
   	max-width: 1024px;

@@ -1,23 +1,23 @@
 # Homepage (Root path)
 require 'sinatra'
-
+​
 helpers do 
   def current_game 
     @game ||= Game.find(session[:game_id]) if session[:game_id]
   end
 end
-
-
+​
+​
 # Homepage (Root path)
 get '/' do
   erb :index
 end
-
-
+​
+​
 post '/game' do
   @game = Game.new 
   count = params[:num_of_players].to_i
-
+​
   if @game.save 
     for i in 1..count  
       @game.players.create
@@ -28,26 +28,26 @@ post '/game' do
     redirect '/'
   end 
 end
-
+​
   # if game.save 
   #   session[:game_id] = game.id 
   #   redirect '/'
   # else
   #   erb :index
   # end
-
+​
 post '/game/players' do
-
+​
   #Get all the Param Keys
   param_keys=params.keys
   #Get create an empty hash for storing player id and player names
   player_details = Hash.new
-
+​
   #use a loop for storing players details with id and name in a hash
   param_keys.each do |key|
     player_details[key] = params[key]
   end
-
+​
   #We get the current Game 
   game_id = session[:game_id]
   game = Game.find(game_id)
@@ -80,7 +80,7 @@ end
 #   puts game.turns.where(player_id: current_game.current_player)
 #   erb :game 
 # end 
-
+​
 post '/turn' do
   game_id = session[:game_id]
   game = Game.find(game_id)
@@ -94,5 +94,4 @@ post '/turn' do
     erb :game
   end
 end 
-
-
+​
