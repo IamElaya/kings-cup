@@ -8,11 +8,13 @@ div.gameboard {
   	vertical-align: middle;
   	margin: auto;
 }
-
 .row li {
 	float: left;
   	width: 25%;
   	margin-bottom: 25px;
+}
+header {
+  top: 70px;
 }
 .row #middle-row { 
 	float: center;
@@ -20,7 +22,6 @@ div.gameboard {
 	margin-left: 30%;
 	margin-bottom: 20px;
 }
-
 img .avatar {
   border: 0 none;
   display: inline-block;
@@ -34,10 +35,11 @@ img .avatar {
   position: absolute;
   bottom: 0;
   right: 0;
-  top: 0;
+  top: 70px;
   width: 150px;
   border: 1 solid;
   opacity:.50;
+  color: white;
 }
 body > footer {
   background: blue;
@@ -46,4 +48,8 @@ body > footer {
   left: 0;
   position: fixed;
   right: 0;
+}
+
+#avatar.current {
+	background-color: blue;
 }
