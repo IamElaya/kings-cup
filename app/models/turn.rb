@@ -9,14 +9,17 @@ class Turn < ActiveRecord::Base
 
 
 
-  protected
+  # protected
 
   def pick_a_card
-     @current_card = cards.where("used_at = ?", false ).order("RANDOM()").first
-     self.card_id = @current_card.id
-     self.save!
+     @current_card = Card.where("used_at = ?", false ).order("RANDOM()").first
+    
      @current_card.used_at = true
      @current_card.save!
+       # self.card_id = @current_card.id
+     # self.save!
+     @current_card
+   
   end
 
   def set_current_player
