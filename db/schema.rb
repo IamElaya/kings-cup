@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20160128031008) do
   add_index "cards", ["turn_id"], name: "index_cards_on_turn_id"
 
   create_table "games", force: :cascade do |t|
-    t.integer  "current_player", default: 1
+    t.integer  "current_player", default: 0
     t.boolean  "game_over",      default: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false

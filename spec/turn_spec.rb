@@ -10,6 +10,7 @@ describe Turn do
       @game.players.create
       @card1 = Card.create
       @turn = @game.turns.create
+      @turn.set_current_player
       expect(@game.current_player).to be(1)
     end 
 
@@ -21,6 +22,8 @@ describe Turn do
       @card1 = Card.create
       @game.current_player = 3
       @turn = @game.turns.create
+      @turn.set_current_player
+      @turn.increment_player_id
       expect(@game.current_player).to be(1)
     end
 
@@ -31,6 +34,8 @@ describe Turn do
       @game.players.create
       @card1 = Card.create
       @turn = @game.turns.create
+      @turn.set_current_player
+      @turn.increment_player_id
       expect(@turn.player_id).to be(1)
     end
   end
