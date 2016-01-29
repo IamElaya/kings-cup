@@ -1,10 +1,9 @@
 div.gameboard { 
-  background: url(/images/poker_table.jpg)no-repeat;
-  	float: left;
+  background: url(/images/poker_table.jpg) 50% 50%;
+  background-size: cover;
   	width: 100%;
   	max-width: 1024px;
   	margin-bottom: 50px;
-  	border: 0 none;
   	display: inline-block;
   	vertical-align: middle;
   	margin: auto;
@@ -13,12 +12,13 @@ div.gameboard {
 .row li {
 	float: left;
   	width: 25%;
-  	margin-bottom: 50px;
+  	margin-bottom: 25px;
 }
 .row #middle-row { 
 	float: center;
 	width: 50%;
 	margin-left: 30%;
+	margin-bottom: 20px;
 }
 
 img .avatar {
@@ -28,4 +28,22 @@ img .avatar {
   max-width: 30%;
   vertical-align: middle;
   margin: auto;
+}
+#sidebar {
+  background: black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  width: 150px;
+  border: 1 solid;
+  opacity:.50;
+}
+body > footer {
+  background: blue;
+  bottom: 0;
+  height: 50px;
+  left: 0;
+  position: fixed;
+  right: 0;
 }
