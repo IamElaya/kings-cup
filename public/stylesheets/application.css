@@ -1,3 +1,5 @@
-body.gameboard { 
-  background: url(/images/poker_table.jpg) no-repeat center center fixed; 
+div.gameboard { 
+  	background: url(/images/poker_table.jpg) no-repeat; 
+	background-size: 100% auto;
+	padding-bottom: 50%;
 }
