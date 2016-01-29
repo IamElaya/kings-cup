@@ -18,6 +18,7 @@ class Turn < ActiveRecord::Base
      if self.card == nil
       puts "Game is over"
      else
+      self.card_id = self.card.id
        self.card.used_at = true
        self.card.save!
       return self.card
