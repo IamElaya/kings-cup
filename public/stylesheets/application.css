@@ -1,33 +1,31 @@
 div.gameboard { 
   background: url(/images/poker_table.jpg)no-repeat;
-  background-size:100% auto;
-  min-width: 50%;
-}
-.row li .top_row {
-	float: left;
-  	width: 25%;
-  	height: 25%;
+  	float: left;
+  	width: 100%;
+  	max-width: 1024px;
   	margin-bottom: 50px;
+  	border: 0 none;
+  	display: inline-block;
+  	vertical-align: middle;
+  	margin: auto;
 }
+
 .row li {
-  float: left;
-  width: 25%;
-  height: 25%;
-  margin-bottom: 200px;
-  display: inline-block;
-}
-li.bottom_row {
 	float: left;
   	width: 25%;
-  	height: 25%;
   	margin-bottom: 50px;
+}
+.row #middle-row { 
+	float: center;
+	width: 50%;
+	margin-left: 30%;
 }
 
 img .avatar {
   border: 0 none;
   display: inline-block;
   max-height: 60%;
-  max-width: 60%;
+  max-width: 30%;
   vertical-align: middle;
   margin: auto;
 }
