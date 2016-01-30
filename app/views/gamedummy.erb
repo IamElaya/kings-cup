@@ -1,0 +1,110 @@
+<header>
+  <nav class="navbar navbar-inverse">
+    <h1>King's Cup: <small>drinking with friends!</small>
+    </h1>
+  </nav>
+</header>
+
+<main>
+  <section id="gameboard">
+    <div class="gameboard">
+      <div class="row">
+          <div id="top_row">
+            <ul>
+              <li>
+                <% if current_game %>
+                  <% @players.each do |player| %>
+                    <div class="col-md-3">
+                      <img src="http://placehold.it/150x100" alt="Responsive image" id="avatar" /> 
+                      <p><%= "#{player.name}" %></p>
+                    </div>
+                  <% end %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="row">
+        <div id="middle-row">
+          <ul>
+            <li>
+              <div class="col-md-3 card">
+                <form action="/turn" method="post"> 
+                  <input type="hidden" name="current_player" value="<%= @current_player %>"></input>
+                  <img src="http://placehold.it/150x100" alt="Responsive image" >
+                  <button type="button" class="btn btn-danger">Pull a Card</button>
+                </form>
+              </div>
+            </li>
+            <li>
+              <div class="col-md-3 card">
+                <img src="http://placehold.it/150x100" alt="Responsive image" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    <div class="row">
+    <div id="small-img">
+      <ul>
+        <li>
+          <div class="col-md-3 avatar">
+            <p>name</p>
+        <img src="http://placehold.it/150x100" alt="Responsive image" /> 
+      </div>
+        </li>
+        <li>
+          <div class="col-md-3 avatar">
+            <p>name</p>
+        <img src="http://placehold.it/150x100"  alt="Responsive image"/>
+      </div>
+        </li>
+        <li>
+          <div class="col-md-3 avatar">
+            <p>name</p>
+        <img src="http://placehold.it/150x100" alt="Responsive image" />
+      </div>
+        </li>
+        <li>
+          <div class="col-md-3 avatar">
+            <p>name</p>
+        <img src="http://placehold.it/150x100"  alt="Responsive image"  />
+      </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+  </section>
+
+
+  <aside id="sidebar">
+    <ul class="nav nav-tabs">
+      <li role="presentation"><a href="#">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          RULES</a>
+      </li>
+    </ul>
+    <form action="/quit" method="post">
+      <p>Quit GAME?</p>
+      <button type="submit" class="btn btn-danger"></button>
+    </form>
+  </aside>
+  
+
+
+
+ 
+
+
+
+
+</main>
+
+<footer>
+
+</footer>
+

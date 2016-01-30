@@ -1,4 +1,4 @@
-<div class="w3-card-4" style="width:50%">
+<!-- <div class="w3-card-4" style="width:50%">
  
 <header class="w3-container w3-blue">
   <h1>Header</h1>
@@ -12,3 +12,131 @@ to typically have four wheels. (Wikipedia)</p>
 </div>
 
 </div>
+ -->
+
+<header>
+  <nav class="navbar navbar-inverse">
+    <h1>King's Cup: <small>drinking with friends!</small>
+    </h1>
+  </nav>
+</header>
+
+<main>
+  <section id="gameboard">
+    <div class="gameboard">
+      <div class="row">
+          <div id="top_row">
+          
+              <% if current_game %>
+              <% if @players.count%2==0 %>
+                    <%= player_half = (@players.count/2) %>
+              <% else %>
+                    <% player_half = (@players.count/2) %>
+                    <%= (player_half+1) %>
+              <% end %>
+              
+                <% @players.each_with_index do |player, index| %>
+                  <% if index < player_half %>
+                    <div class="col-md-3">
+                      <img src="http://placehold.it/150x100" alt="Responsive image" id="avatar" /> 
+                      <p class="<%= @turn.player == player ? 'active' : '' %>"><%= "#{player.name}" %></p>
+                    </div>
+                  <% end %>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div id="middle-row">
+          <div class="col-md-3 card">
+            <form action="/turn" method="post"> 
+              <input type="hidden" name="current_player" value="<%= @current_player %>"></input>
+              
+              <button class="card_picker">
+                <img src="/images/cardback.jpg" alt="Responsive image" style="width:100px" />
+              </button>
+            </form>
+          </div>
+          <div class="col-md-3 card">
+            <!-- <img src="/images/cardback.jpg" alt="Responsive image" /> -->
+            <img src="/<%= @turn.card.url %>" style="width:95px"></img>
+          </div>
+        </div>
+      </div>
+
+    
+
+    <div class="row">
+    <div id="small-img">
+      <ul>
+        <% @players.each_with_index do |player, index| %>
+          <% if index >= player_half  %>
+            <li>
+              <div class="col-md-3">
+                <p class="<%= @turn.player == player ? 'active' : '' %>"><strong><%= "#{player.name}" %></strong></p>
+                <img src="http://placehold.it/150x100?text=<%= player.name %>" alt="Responsive image" id="avatar" /> 
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+
+
+
+        <!-- <li>
+          <div class="col-md-3 avatar">
+            <p>name</p>
+        <img src="http://placehold.it/150x100" alt="Responsive image" /> 
+      </div>
+        </li>
+        <li>
+          <div class="col-md-3 avatar">
+            <p>name</p>
+        <img src="http://placehold.it/150x100"  alt="Responsive image"/>
+      </div>
+        </li>
+        <li>
+          <div class="col-md-3 avatar">
+            <p>name</p>
+        <img src="http://placehold.it/150x100" alt="Responsive image" />
+      </div>
+        </li>
+        <li>
+          <div class="col-md-3 avatar">
+            <p>name</p>
+        <img src="http://placehold.it/150x100"  alt="Responsive image"  />
+      </div>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</div>
+  </section>
+
+
+  <aside id="sidebar">
+    <ul class="nav nav-tabs">
+      <li role="presentation"><a href="#">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          RULES</a>
+      </li>
+    </ul>
+    <form action="/quit" method="post">
+      <button type="submit" class="btn btn-danger">QUIT GAME</button>
+    </form>
+  </aside>
+  
+
+
+
+ 
+
+
+
+
+</main>
+
+<footer>
+
+</footer>
+
+

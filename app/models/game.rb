@@ -7,7 +7,7 @@ class Game < ActiveRecord::Base
   after_create :create_deck
 
   def create_deck
-   field_names = ['rank','suit','rule']
+   field_names = ['rank','suit','rule','url']
     failure_count = 0 
     Card.transaction do 
       File.open("db/data/cards.csv").each do |line|
@@ -15,7 +15,7 @@ class Game < ActiveRecord::Base
         attribute_hash = Hash[field_names.zip(data)]
         begin 
           print attribute_hash
-          Card.create!(attribute_hash)
+          self.cards.create!(attribute_hash)
           print '.'
         rescue ActiveRecord::UnknownAttributeError
           failure_count += 1
@@ -28,5 +28,13 @@ class Game < ActiveRecord::Base
     failures = failure_count > 0 ? "(failed to create #{failure_count} card records)" : ''
     puts "\nDone #{failures}\n\n"
   end
+
+  # def next_player
+  #   players[(turns.count) % players.count]
+  # end
+
+  # def advance_player
+  #   self.current_player = next_player.id
+  # end
 
 end
