@@ -73,7 +73,7 @@ post '/turn' do
   @turn = Turn.new
   @turn.game_id = game.id 
   @turn.set_current_player 
-  @turn.increment_player_id
+  # @turn.increment_player_id
   @turn.pick_a_card
   if @turn.save
     @players = game.players.all  
