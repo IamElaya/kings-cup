@@ -1,21 +1,19 @@
 div.gameboard { 
   background: url(/images/poker_table.jpg) 50% 50%;
-  background-size: cover;
+  /*background-size: cover;*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
     width: 100%;
-    max-width: 1024px;
-    margin-bottom: 50px;
     display: inline-block;
     vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: -60px;
 }
-.row li {
-  float: left;
-    width: 25%;
-    margin-bottom: 25px;
-}
+
 header {
-  top: 70px;
+  top: 35px;
 }
 .row #middle-row { 
   float: center;
@@ -23,10 +21,12 @@ header {
   margin-left: 30%;
   margin-bottom: 20px;
 }
+
+.row
 img .avatar {
   border: 0 none;
   display: inline-block;
-  max-height: 60%;
+  max-height: 40%;
   max-width: 30%;
   vertical-align: middle;
   margin: auto;
@@ -81,9 +81,9 @@ button.card_picker
 .col-sm-5 {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 65px;
   float: none;
   width: 40%;
-  padding: 20px;
 }
 
 

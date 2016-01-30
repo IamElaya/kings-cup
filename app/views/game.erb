@@ -38,7 +38,7 @@ to typically have four wheels. (Wikipedia)</p>
                 <% @players.each_with_index do |player, index| %>
                   <% if index < player_half %>
                     <div class="col-md-3">
-                      <img src="http://placehold.it/150x100" alt="Responsive image" id="avatar" /> 
+                      <img class="img-rounded"src="http://placehold.it/150x100" alt="Responsive image" id="avatar" /> 
                       <p class="<%= @turn.player == player ? 'active' : '' %>"><%= "#{player.name}" %></p>
                     </div>
                   <% end %>
@@ -67,7 +67,7 @@ to typically have four wheels. (Wikipedia)</p>
     
 
     <div class="row">
-    <div id="small-img">
+    <div id="bottom-row">
         <% @players.each_with_index do |player, index| %>
           <% if index >= player_half  %>
               <div class="col-md-3">
@@ -103,7 +103,6 @@ to typically have four wheels. (Wikipedia)</p>
         <img src="http://placehold.it/150x100"  alt="Responsive image"  />
       </div>
         </li> -->
-      </ul>
     </div>
   </div>
 </div>
@@ -122,6 +121,7 @@ to typically have four wheels. (Wikipedia)</p>
     </form>
   </aside>
   
+  </main>
 <!-- Adds the rule of the card to the bottom of the page -->
 <div class="container-fluid">
   <div class="row">
@@ -143,7 +143,7 @@ to typically have four wheels. (Wikipedia)</p>
 
 
 
-</main>
+
 
 
 
