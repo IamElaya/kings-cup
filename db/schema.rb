@@ -14,34 +14,43 @@
 ActiveRecord::Schema.define(version: 20160128031008) do
 
   create_table "cards", force: :cascade do |t|
+    t.integer  "turn_id"
     t.string   "rank"
     t.string   "suit"
     t.string   "rule"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.boolean  "used_at",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
+  add_index "cards", ["turn_id"], name: "index_cards_on_turn_id"
+
   create_table "games", force: :cascade do |t|
-    t.integer  "current_player", default: 1
+    t.integer  "current_player", default: 0
     t.boolean  "game_over",      default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "players", force: :cascade do |t|
     t.integer  "game_id"
     t.string   "name"
-    t.integer  "kings"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "kings",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
+  add_index "players", ["game_id"], name: "index_players_on_game_id"
+
   create_table "turns", force: :cascade do |t|
-    t.integer  "player_id"
+    t.integer  "player_id",  default: 0
     t.integer  "game_id"
     t.integer  "card_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
+
+  add_index "turns", ["card_id"], name: "index_turns_on_card_id"
+  add_index "turns", ["game_id"], name: "index_turns_on_game_id"
 
 end

@@ -4,9 +4,12 @@ configure do
     ActiveRecord::Base.logger = Logger.new(STDOUT)
   end
 
+
+  DATABASE = ENV['DATABASE'] || 'db/db.sqlite3'
+
   set :database, {
     adapter: "sqlite3",
-    database: "db/db.sqlite3"
+    database: DATABASE
   }
 
   # Load all models from app/models, using autoload instead of require

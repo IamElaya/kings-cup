@@ -1,12 +1,5 @@
-class Game < ActiveRecord::Base
-
-  has_many :players
-  has_many :turns
-  has_many :cards
-
-  after_create :create_deck
-
-  def create_deck
+   
+def create_deck
    field_names = ['rank','suit','rule']
     failure_count = 0 
     Card.transaction do 
@@ -28,5 +21,3 @@ class Game < ActiveRecord::Base
     failures = failure_count > 0 ? "(failed to create #{failure_count} card records)" : ''
     puts "\nDone #{failures}\n\n"
   end
-
-end
