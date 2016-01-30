@@ -6,7 +6,8 @@ div.gameboard {
     margin-bottom: 50px;
     display: inline-block;
     vertical-align: middle;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .row li {
   float: left;
@@ -75,4 +76,17 @@ button.card_picker
 {
   background: transparent;
   border: 0;
+}
+
+.col-sm-5 {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  width: 40%;
+  padding: 20px;
+}
+
+
+.card1 {
+  margin-left: 65px;
 }

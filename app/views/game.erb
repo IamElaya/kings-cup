@@ -48,18 +48,18 @@ to typically have four wheels. (Wikipedia)</p>
       </div>
       <div class="row">
         <div id="middle-row">
-          <div class="col-md-3 card">
+          <div class="col-md-3">
             <form action="/turn" method="post"> 
               <input type="hidden" name="current_player" value="<%= @current_player %>"></input>
               
               <button class="card_picker">
-                <img src="/images/cardback.jpg" alt="Responsive image" style="width:100px" />
+                <img class="card1" src="/images/cardback.jpg" alt="Responsive image" style="width:100px" />
               </button>
             </form>
           </div>
-          <div class="col-md-3 card">
+          <div class="col-md-3">
             <!-- <img src="/images/cardback.jpg" alt="Responsive image" /> -->
-            <img src="/<%= @turn.card.url %>" style="width:95px"></img>
+            <img class="card1" src="/<%= @turn.card.url %>" style="width:95px"></img>
           </div>
         </div>
       </div>
@@ -68,15 +68,12 @@ to typically have four wheels. (Wikipedia)</p>
 
     <div class="row">
     <div id="small-img">
-      <ul>
         <% @players.each_with_index do |player, index| %>
           <% if index >= player_half  %>
-            <li>
               <div class="col-md-3">
                 <p class="<%= @turn.player == player ? 'active' : '' %>"><strong><%= "#{player.name}" %></strong></p>
-                <img src="http://placehold.it/150x100?text=<%= player.name %>" alt="Responsive image" id="avatar" /> 
+                <img class="img-rounded" src="http://placehold.it/150x100?text=<%= player.name %>" alt="Responsive image" id="avatar" /> 
               </div>
-            </li>
           <% end %>
         <% end %>
 
@@ -125,7 +122,20 @@ to typically have four wheels. (Wikipedia)</p>
     </form>
   </aside>
   
-
+<!-- Adds the rule of the card to the bottom of the page -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-5" style="background-color:#E6E6E6">
+      <% @string_array =@turn.card.rule.split(' ') %>
+      <p><center><%= @string_array.first %></center></p>
+      <% @string_array.each_index do |x| %>
+      <% if x >1 %>
+      <%= @string_array[x] %>
+      <% end %>
+     <% end %>
+    </div>
+  </div>
+</div>
 
 
  
@@ -135,8 +145,10 @@ to typically have four wheels. (Wikipedia)</p>
 
 </main>
 
-<footer>
 
-</footer>
+
+
+
+
 
 
