@@ -32,24 +32,39 @@ img .avatar {
 }
 #sidebar {
   background: black;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
-  top: 70px;
+  top: 80px;
   width: 150px;
   border: 1 solid;
   opacity:.50;
   color: white;
 }
 body > footer {
-  background: blue;
+  background-color: blue;
   bottom: 0;
-  height: 50px;
+  height: 60px;
   left: 0;
   position: fixed;
   right: 0;
+  opacity: 0.2;
+}
+.rule {
+  color: black;
 }
 
 #avatar.current {
 	background-color: blue;
+}
+#foo{
+  overflow: scroll;
+  background: black;
+  position: fixed;
+  bottom: 100px;
+  right: 0;
+  top: 120px;
+  width: 300px;
+  border: 1 solid;
+  color: white;
 }
