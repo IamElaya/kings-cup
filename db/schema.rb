@@ -15,14 +15,17 @@ ActiveRecord::Schema.define(version: 20160128031008) do
 
   create_table "cards", force: :cascade do |t|
     t.integer  "turn_id"
+    t.integer  "game_id"
     t.string   "rank"
     t.string   "suit"
     t.string   "rule"
+    t.string   "url"
     t.boolean  "used_at",    default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
 
+  add_index "cards", ["game_id"], name: "index_cards_on_game_id"
   add_index "cards", ["turn_id"], name: "index_cards_on_turn_id"
 
   create_table "games", force: :cascade do |t|

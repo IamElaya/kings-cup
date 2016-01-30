@@ -7,7 +7,7 @@ class Game < ActiveRecord::Base
   after_create :create_deck
 
   def create_deck
-   field_names = ['rank','suit','rule']
+   field_names = ['rank','suit','rule','url']
     failure_count = 0 
     Card.transaction do 
       File.open("db/data/cards.csv").each do |line|
