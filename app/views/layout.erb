@@ -24,6 +24,20 @@
   <title></title>
 </head>
 <body>
+<% if current_game %>
+
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img id="rotate" class="nav-head" src="/images/Kheart.svg"></a>
+          </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#">Add More Players</a></li>
+          <li><a href="#">Game Instructions</a></li>
+        </ul>
+       </div>
+      </nav>
+      <% end %>
   <%= yield %>
 </body>
 </html>
