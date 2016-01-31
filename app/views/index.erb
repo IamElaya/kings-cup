@@ -1,69 +1,64 @@
-<!DOCTYPE html>
-<!-- <html>
-<head>
-  <title></title>
-</head>
-<body>
-<div class="row">
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-</div>
-<div class="row">
-  <div class="col-md-8">.col-md-8</div>
-  <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-6">.col-md-6</div>
-  <div class="col-md-6">.col-md-6</div>
-</div>
-</body>
-</html> -->
-​
-<h1>Welcome To Kings Cup Game</h1>
-​
-<% if !current_game %>
-  <form action='/game' method = "post">
-  <p> Select Number of players</p>
-    <select name="num_of_players"> 
-       <option value="1">1</option>
-       <option value="2">2</option>
-       <option value="3">3</option>
-       <option value="4">4</option>
-       <option value="5">5</option>
-       <option value="6">6</option>
-       <option value="7">7</option>
-       <option value="8">8</option>
-    </select>
-    <button type="submit">Lets Get Drunk</button>
-  </form>
-<% end %>
+
+<div class="welcome">
+  <div class="container-fluid bg-1 text-center">
+
+    <% if !current_game %> 
+      <h3>Welcome To The Kings Cup Game</h3>
+      <div class="bounce"> 
+        <img id="logo" src="/images/beer.png" >
+      </div>
+      <img class="logo-image" src="/images/logo.png">
+      <div class="bounce2">
+        <img id="logo2" src="/images/beer.png" >
+      </div>
+      <form action='/game' method = "post">
+        <label for="sel1">Select Number Of Players: </label>
+        <select name="num_of_players" class="form-control" id="sel1">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        <button class="btn btn-success btn" type="submit"><span class= "glyphicon glyphicon-glass" aria-hidden="true"></span>Lets Get Drunk!</button>
+      </form>
+    <% end %>
 ​
 <!--  -->
-<% if current_game %>
-  <form action="/game/players" method="post">
-    <% current_game.players.each_with_index do |player, idx| %>
-      <p>
-        <label for="player-<%= player.id %>-name">Player <%= idx + 1 %> name:</label>
-        <input id="player-<%= player.id %>-name" name="<%= player.id %>" />
-      </p>
+
+    <% if current_game %>
+
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img id="rotate" class="nav-head" src="/images/Kheart.svg"></a>
+          </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#">Add More Players</a></li>
+          <li><a href="#">Game Instructions</a></li>
+        </ul>
+       </div>
+      </nav>
+
+
+
+
+      <h3 class="animated zoomIn">Enter Your Names to Start</h3>
+      <img class="logo-image" src="/images/logo.png">
+      <form id="names" action="/game/players" method="post">
+        <% current_game.players.each_with_index do |player, idx| %>
+          <div class="form-group">
+            <label for="player-<%= player.id %>-name">Player <%= idx + 1 %></label>
+            <input id="name" size="100" id="player-<%= player.id %>-name" name="<%= player.id %>" />
+          </div>
+        <% end %>
+        <p>
+          <button class="btn btn-success btn">Start Game</button>
+        </p>
+      </form>
     <% end %>
-    <p>
-      <button>Start Game</button>
-    </p>
-  </form> 
-<% end %>
+  </div>
+</dive>
