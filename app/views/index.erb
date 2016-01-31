@@ -56,7 +56,7 @@
 <!--  -->
 <% if current_game %>
   <form action="/game/players" method="post">
-    <% @game.players.each_with_index do |player, idx| %>
+    <% current_game.players.each_with_index do |player, idx| %>
       <p>
         <label for="player-<%= player.id %>-name">Player <%= idx + 1 %> name:</label>
         <input id="player-<%= player.id %>-name" name="<%= player.id %>" />
