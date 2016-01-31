@@ -1,4 +1,4 @@
-div.gameboard { 
+#gameboard { 
   background: url(/stylesheets/images/poker_table.jpg) 50% 50%;
   background-size: cover;
     width: 100%;
