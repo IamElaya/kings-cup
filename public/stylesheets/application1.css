@@ -1,0 +1,138 @@
+select.form-control {
+  line-height: 15px;
+  max-width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  background-color: #ffffe5;
+  font-size: 20px;
+}
+
+body .welcome {
+position: fixed;
+ width: 100%;
+ height: 100%;
+ background: url(/images/Deck-of-Cards.jpg) no-repeat center center fixed;
+ z-index: 100;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+
+ .navbar-inverse{
+  background: none;
+  border: outset;
+  /*border-color: #008000;*/
+  min-height: 100%;
+  border-radius: 10px;
+ /* margin-right: -20px;
+  margin-left: -20px;*/
+
+}
+
+.navbar-nav li a:visited {
+  color: black;
+}
+
+
+.nav-head {
+  max-height: 45px;
+  position: relative;
+  padding-left: 10px;
+  top: -13px;
+}
+
+/*.logo-image:hover {
+  transform: rotate(10deg) scale(1.1);
+}*/
+.btn-success {
+  color: #008000;
+  margin-top: 10px;
+  background-color: #ffff00;
+  margin-bottom: 20px;
+}
+
+.bounce {
+  position:relative;
+  float: left;
+  left:20%;
+  bottom:0;
+  margin-top:30px;
+  margin-left:-25px;
+  height:50px;
+  width:50px;
+  -webkit-animation:bounce 0.9s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%       { bottom:5px; }
+  25%, 75% { bottom:15px; }
+  50%      { bottom:30px; }
+  100%     {bottom:0;}
+}
+
+.bounce2 {
+  position:relative;
+  float: right;
+  right:27%;
+  bottom:0;
+  margin-right: -25px; 
+  margin-top:30px;
+  height:50px;
+  width:50px;
+  -webkit-animation:bounce 0.9s infinite;
+}
+
+@-webkit-keyframes bounce {
+  0%       { bottom:5px; }
+  25%, 75% { bottom:15px; }
+  50%      { bottom:30px; }
+  100%     {bottom:0;}
+}
+
+
+.bg-1 { 
+    background-color:  #00b300;  /*Green */
+    color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: fixed;
+ }
+
+#logo {
+  position: absolute;
+  max-height: 300px;
+}
+
+#logo2 {
+  max-height: 300px;
+  margin-right: 50%;
+}
+
+#name {
+  max-width: 30%;
+  background: #ffffe5;
+  font-size: 15px;
+  color: black;
+}
+
+
+
+ #rotate {
+    -webkit-animation: anim 10s infinite linear;
+    animation: anim 10s infinite linear;
+}
+
+@-webkit-keyframes anim {
+    from {-webkit-transform: rotateY(0deg);}
+    to {-webkit-transform: rotateY(360deg);}
+}
+
+@keyframes anim {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
+}
+
+
+
+
+

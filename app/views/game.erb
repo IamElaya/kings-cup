@@ -18,39 +18,39 @@
     <div class="row">
       <div id="top_row">
         <ul>
+
+          <% if current_game.players.size >= 1 %>
           <li>
-  
             <div class="col-md-3 avatar">
           <img src="http://placehold.it/150x100" alt="Responsive image" id="avatar" /> 
         </div>
           </li>
+          <% end %>
+
+           <% if current_game.players.size >= 3 %>
           <li>
             <div class="col-md-3 avatar">
           <img src="http://placehold.it/150x100" alt="Responsive image"/>
-
-=======
         </div>
           </li>
+          <% end %>
+
+          <% if current_game.players.size >= 5 %>
           <li>
             <div class="col-md-3 avatar">
           <img src="http://placehold.it/150x100" alt="Responsive image" />
->>>>>>> master
         </div>
           </li>
+          <% end %>
+
+          <% if current_game.players.size >= 7 %>
           <li>
             <div class="col-md-3 avatar">
           <img src="http://placehold.it/150x100" alt="Responsive image" />
-
         </div>
           </li>
-          <li>
-            <div class="col-md-3 avatar">
-          <img src="http://placehold.it/150x100" alt="Responsive image" />
-=======
->>>>>>> master
+          <% end %>
 
-        </div>
-          </li>
         </ul>
       </div>
     </div>
@@ -77,42 +77,49 @@
       </div>
         </li>
         <% end %>
-=======
-        <li>
-          <div class="col-md-3 card">
-            <img class="card1" src="/<%= @turn.card.url %>" style="width:95px"></img>
-      </div>
-        </li>
       </ul>
       </div>
     </div>
     <div class="row">
     <div id="small-img">
       <ul>
+
+      <% if current_game.players.size >= 2 %>
         <li>
           <div class="col-md-3 avatar">
             <p>name</p>
         <img src="http://placehold.it/150x100" alt="Responsive image" /> 
       </div>
         </li>
+        <% end %>
+
+        <% if current_game.players.size >= 4 %>
         <li>
           <div class="col-md-3 avatar">
             <p>name</p>
         <img src="http://placehold.it/150x100"  alt="Responsive image"/>
       </div>
         </li>
+        <% end %>
+
+        <% if current_game.players.size >= 6 %>
         <li>
           <div class="col-md-3 avatar">
             <p>name</p>
         <img src="http://placehold.it/150x100" alt="Responsive image" />
       </div>
         </li>
+        <% end %>
+
+        <% if current_game.players.size == 8 %>
         <li>
           <div class="col-md-3 avatar">
             <p>name</p>
         <img src="http://placehold.it/150x100"  alt="Responsive image"  />
       </div>
         </li>
+        <% end %>
+
       </ul>
     </div>
   </div>
@@ -186,9 +193,10 @@ Make a rule and whenever someone breaks that rule from now on they must sip.
 <footer>
   <div class = "rule">
 <p>PLACEHOLDLER: FOR CURRENT RULE!</p>
-
-
+<% if @turn.card %>
+<%= @turn.card.rule %>
   </div>
+  <% end %>
 </footer>
 
 </body>
