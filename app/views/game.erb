@@ -18,28 +18,39 @@
     <div class="row">
       <div id="top_row">
         <ul>
+
+          <% if current_game.players.size >= 1 %>
           <li>
-  
             <div class="col-md-3 avatar">
           <img src="http://placehold.it/150x100" alt="Responsive image" id="avatar" /> 
         </div>
           </li>
+          <% end %>
+
+           <% if current_game.players.size >= 2 %>
           <li>
             <div class="col-md-3 avatar">
           <img src="http://placehold.it/150x100" alt="Responsive image"/>
         </div>
           </li>
-          <li>
-            <div class="col-md-3 avatar">
-          <img src="http://placehold.it/150x100" alt="Responsive image" />
-        </div>
-          </li>
-          <li>
-            <div class="col-md-3 avatar">
-          <img src="http://placehold.it/150x100" alt="Responsive image" />
+          <% end %>
 
+          <% if current_game.players.size >= 3 %>
+          <li>
+            <div class="col-md-3 avatar">
+          <img src="http://placehold.it/150x100" alt="Responsive image" />
         </div>
           </li>
+          <% end %>
+
+          <% if current_game.players.size >= 4 %>
+          <li>
+            <div class="col-md-3 avatar">
+          <img src="http://placehold.it/150x100" alt="Responsive image" />
+        </div>
+          </li>
+          <% end %>
+
         </ul>
       </div>
     </div>
@@ -72,30 +83,43 @@
     <div class="row">
     <div id="small-img">
       <ul>
+
+      <% if current_game.players.size >= 5 %>
         <li>
           <div class="col-md-3 avatar">
             <p>name</p>
         <img src="http://placehold.it/150x100" alt="Responsive image" /> 
       </div>
         </li>
+        <% end %>
+
+        <% if current_game.players.size >= 6 %>
         <li>
           <div class="col-md-3 avatar">
             <p>name</p>
         <img src="http://placehold.it/150x100"  alt="Responsive image"/>
       </div>
         </li>
+        <% end %>
+
+        <% if current_game.players.size >= 7 %>
         <li>
           <div class="col-md-3 avatar">
             <p>name</p>
         <img src="http://placehold.it/150x100" alt="Responsive image" />
       </div>
         </li>
+        <% end %>
+
+        <% if current_game.players.size == 8 %>
         <li>
           <div class="col-md-3 avatar">
             <p>name</p>
         <img src="http://placehold.it/150x100"  alt="Responsive image"  />
       </div>
         </li>
+        <% end %>
+
       </ul>
     </div>
   </div>
