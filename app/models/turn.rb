@@ -27,13 +27,13 @@ class Turn < ActiveRecord::Base
   end
 
   def set_current_player
-    if game.current_player < game.players.last.id
+    if game.current_player < game.players.length
       game.current_player += 1
       game.save!
       # self.player_id = game.current_player
       # self.save!
     else
-      game.current_player -= (game.players.count - 1)
+      game.current_player = 1
       game.save!
       # self.player_id = 1
       # self.save!
