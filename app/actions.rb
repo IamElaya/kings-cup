@@ -78,7 +78,6 @@ post '/turn' do
 end 
 
 get '/end_game' do
-
     session.clear
     redirect '/'
   end

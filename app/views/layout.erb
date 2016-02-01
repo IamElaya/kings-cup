@@ -25,31 +25,9 @@
 </head>
 <body>
 <% if current_game %>
-<!-- 
-      <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#"><img id="rotate" class="nav-head" src="/images/Kheart.svg"></a>
-          </div>
-<<<<<<< HEAD
-        <ul class="nav navbar-nav">
-          <li><a href="#">Add More Players</a></li>
-          <li><a href="#">Game Instructions</a></li>
-          <% end %>
-          <% if @players %>
-  <a class="btn btn-danger" href="/end_game">QUIT GAME</a>
-  <% end %>
-        </ul>
-       </div>
-      </nav>
-      
-=======
-          <ul>
-          <li class="add-players"><a href="#">Add More Players</a></li>
-          <li class="instructions"><a href="#">Game Instructions</a></li>
-          </ul>
-       </div>
-      </nav> -->
+
+
+
 
       <nav class="navbar navbar-inverse">
       <href="#"><img id="rotate" class="nav-head" src="/images/Kheart.svg"></a>
@@ -106,12 +84,8 @@ Make a rule and whenever someone breaks that rule from now on they must sip.
 //-->
 </script>
 
-
   </p>
-  <p class="add-players" ><a href="#">Add More Players</a></p>
-    <% if @players %>
-  <a class="btn btn-danger" href="/end_game">QUIT GAME</a>
-  <% end %>
+  <p class="end_game" ><a href="/end_game">End Game</a></p>
 </nav>
       <% end %>
   <%= yield %>
