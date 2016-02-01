@@ -140,7 +140,6 @@ position: relative;
     -webkit-animation: anim 10s infinite linear;
     animation: anim 10s infinite linear;
 }
-}
 
 @-webkit-keyframes anim {
     from {-webkit-transform: rotateY(0deg);}
@@ -161,4 +160,6 @@ div#drunk-dogs {
   right: 150px;
   top: 200px;
 }
-
+h4 {
+  color:blue;
+}
