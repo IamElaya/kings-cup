@@ -14,7 +14,6 @@
       <form action='/game' method = "post">
         <label for="sel1">Select Number Of Players: </label>
         <select name="num_of_players" class="form-control" id="sel1">
-          <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
@@ -26,9 +25,6 @@
         <button class="btn btn-success btn" type="submit"><span class= "glyphicon glyphicon-glass" aria-hidden="true"></span>Lets Get Drunk!</button>
       </form>
     <% end %>
-​
-<!--  -->
-
     <% if current_game %>
       <h3 class="animated zoomIn">Enter Your Names to Start</h3>
       <img class="logo-image" src="/images/logo.png">
