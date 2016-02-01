@@ -23,6 +23,7 @@
           <img src="/stylesheets/images/don_burks.jpg" alt="Responsive image" id="avatar" /> 
          <h4><%= @players.find(1).name %></h4>
         </div>
+
           </li>
           <% end %>
            <% if current_game.players.size >= 3 %>
@@ -143,11 +144,11 @@
   <div class = "rule">
     <% @players.each do |player| %>
    <% if player.id == current_game.current_player %>
-   <p><%= player.name %>'s <strong>turn!</strong></p>
+   <strong><%= player.name %>'s turn!</strong><br>
    <% end %>
    <% end %>
 <% if @turn.card %>
-<strong><%= @turn.card.rule %></strong>
+<%= @turn.card.rule %>
   </div>
   </div>
   <% end %>

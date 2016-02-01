@@ -1,12 +1,13 @@
-
+    <% if !current_game %>
 <div class="welcome">
   <div class="container-fluid bg-1 text-center">
-    <% if !current_game %> 
-      <h3>Welcome To The Kings Cup Game</h3>
+      <h3>WELCOME TO KING'S CUP!</h3>
       <div class="bounce"> 
         <img id="logo" src="/images/beer.png" >
       </div>
+      <href="#"><img id="rotate" class="nav-head" src="/images/Kheart.svg"></a>
       <img class="logo-image" src="/images/logo.png">
+      <href="#"><img id="rotate" class="nav-head" src="/images/Kheart.svg"></a>
       <div class="bounce2">
         <img id="logo2" src="/images/beer.png" >
       </div>
@@ -24,11 +25,12 @@
         <button class="btn btn-success btn" type="submit"><span class= "glyphicon glyphicon-glass" aria-hidden="true"></span>Lets Get Drunk!</button>
       </form>
     <% end %>
-      </div>
+    </div>
 </div>
-<div class="col-md-8">
-<div class="welcome2">
+
     <% if current_game %>
+    <div class="welcome2">
+<div class="col-md-8">
       <h3 class="animated zoomIn">Enter Your Names to Start</h3>
       <form id="names" action="/game/players" method="post">
         <% current_game.players.each_with_index do |player, idx| %>
