@@ -1,8 +1,8 @@
 class Game < ActiveRecord::Base
 
-  has_many :players
-  has_many :turns
-  has_many :cards
+  has_many :players, dependent: :destroy
+  has_many :turns, dependent: :destroy
+  has_many :cards, dependent: :destroy
 
   after_create :create_deck
 
