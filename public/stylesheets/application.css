@@ -36,7 +36,7 @@ img .avatar {
 }
 
 footer {
-  background: url(/images/footer.png) no-repeat;
+    background-color: #ffffe5;
   background-size: cover;
  position: fixed;
  bottom: 1px;
@@ -44,11 +44,11 @@ footer {
  left: 0px;
  height: 85px;
  max-height: 100px;
- background-color: rgba(0, 0, 0, 0.5);
+
 
 }
 .rules {
-  background-color: rgba(0, 0, 0, 0.5);
+
   font-color: black;
   position: fixed;
   left: 150px;

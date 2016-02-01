@@ -11,7 +11,7 @@
         <img id="logo2" src="/images/beer.png" >
       </div>
       <form action='/game' method = "post">
-        <label for="sel1">Select Number Of Players: </label>
+        <label class="player-number" for="sel1">Select Number Of Players: </label>
         <select name="num_of_players" class="form-control" id="sel1">
           <option value="2">2</option>
           <option value="3">3</option>
@@ -26,6 +26,8 @@
     <% end %>
       </div>
 </div>
+<div class="col-md-8">
+<div class="welcome2">
     <% if current_game %>
       <h3 class="animated zoomIn">Enter Your Names to Start</h3>
       <form id="names" action="/game/players" method="post">
@@ -39,5 +41,11 @@
           <button class="btn btn-success btn">Start Game</button>
         </p>
       </form>
+          <div id="drunk-dogs">
+      <img src="https://media.giphy.com/media/PvZ2jLjFofH4Q/giphy.gif">
+    </div>
     <% end %>
+    </div>
+    </div>
+
 
