@@ -7,15 +7,7 @@ select.form-control {
   background-color: #ffffe5;
   font-size: 20px;
 }
-body .welcome {
-position: fixed;
- width: 100%;
- height: 100%;
- background: url(/images/Deck-of-Cards.jpg) no-repeat center center fixed;
-/* z-index: 100;*/
- background-repeat: no-repeat;
- background-size: cover;
-}
+
  .navbar-inverse{
   background: none;
   border: outset;
@@ -95,15 +87,21 @@ p.add-players{
   50%      { bottom:30px; }
   100%     {bottom:0;}
 }
-
-
 .bg-1 { 
     background-color:  #00b300;  /*Green */
     color: #ffffff;
     background-repeat: no-repeat;
-    background-position: fixed;
+    background-position: static;
  }
-
+div.welcome {
+position: absolute;
+ width: 100%;
+ height: 100%;
+ background: url(/images/Deck-of-Cards.jpg) no-repeat center center;
+/* z-index: 100;*/
+ background-repeat: no-repeat;
+ background-size: cover;
+}
 #logo {
   position: absolute;
   max-height: 300px;
