@@ -78,10 +78,7 @@ post '/turn' do
 end 
 
 get '/end_game' do
-  # @players = @player_details
-  #  @players.each do |player|
-  #     player.destroy
-  #   end
+
     session.clear
     redirect '/'
   end
