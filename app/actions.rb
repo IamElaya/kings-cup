@@ -55,6 +55,10 @@ end
 #   erb :game 
 # end 
 
+get '/rules' do 
+  erb :rules
+end
+
 get '/turn' do
   @game = current_game
   @turn = @game.turns.last
