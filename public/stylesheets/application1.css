@@ -33,13 +33,24 @@ position: fixed;
 .navbar-nav li a:visited {
   color: black;
 }
-
+p.instructions{
+  max-height: 45px;
+  position: fixed;
+  right: 20px;
+  top: 10px;
+}
+p.add-players{
+  max-height: 45px;
+  position: fixed;
+  left: 40px;
+  top: 10px;
+}
 
 .nav-head {
   max-height: 45px;
   position: relative;
   padding-left: 10px;
-  top: -13px;
+  top: 4px;
 }
 
 /*.logo-image:hover {
