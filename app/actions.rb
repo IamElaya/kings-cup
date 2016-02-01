@@ -25,13 +25,13 @@ end
 
 post '/game/players' do
   param_keys=params.keys
-  player_details = Hash.new
+  @player_details = Hash.new
   param_keys.each do |key|
-    player_details[key] = params[key]
+    @player_details[key] = params[key]
   end
   # game_id = session[:game_id]
   current_game.players.each do |player|
-    player_details.each do |id, name|
+    @player_details.each do |id, name|
       if player.id.to_i == id.to_i
         player.name = name
         player.save 
@@ -40,7 +40,7 @@ post '/game/players' do
   end
   @turn = Turn.new 
   @turn.game_id = current_game.id
-  @turn.player_id = player_details.keys[0]
+  @turn.player_id = @player_details.keys[0]
   current_game.current_player = @turn.player_id 
   # @turn.pick_a_card
   if current_game.save 
@@ -76,3 +76,8 @@ post '/turn' do
     erb :game
   end
 end 
+
+get '/end_game' do
+    session.clear
+    redirect '/'
+  end

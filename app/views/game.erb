@@ -23,6 +23,9 @@
           <li>
             <div class="col-md-3 avatar">
           <img src="http://placehold.it/150x100" alt="Responsive image" id="avatar" /> 
+          <p>
+          <%= @player_details['1'] %>
+          </p>
         </div>
           </li>
           <% end %>
@@ -31,6 +34,9 @@
           <li>
             <div class="col-md-3 avatar">
           <img src="http://placehold.it/150x100" alt="Responsive image"/>
+          <p>
+          <%= @player_details['3'] %>
+          </p>
         </div>
           </li>
           <% end %>
@@ -39,6 +45,9 @@
           <li>
             <div class="col-md-3 avatar">
           <img src="http://placehold.it/150x100" alt="Responsive image" />
+         <p>
+          <%= @player_details['5'] %>
+          </p>
         </div>
           </li>
           <% end %>
@@ -47,6 +56,9 @@
           <li>
             <div class="col-md-3 avatar">
           <img src="http://placehold.it/150x100" alt="Responsive image" />
+          <p>
+          <%= @player_details['7'] %>
+          </p>
         </div>
           </li>
           <% end %>
@@ -87,8 +99,10 @@
       <% if current_game.players.size >= 2 %>
         <li>
           <div class="col-md-3 avatar">
-            <p>name</p>
         <img src="http://placehold.it/150x100" alt="Responsive image" /> 
+          <p>
+          <%= @player_details['2'] %>
+          </p>
       </div>
         </li>
         <% end %>
@@ -96,8 +110,9 @@
         <% if current_game.players.size >= 4 %>
         <li>
           <div class="col-md-3 avatar">
-            <p>name</p>
         <img src="http://placehold.it/150x100"  alt="Responsive image"/>
+     <p><%= @player_details['4'] %>
+          </p>
       </div>
         </li>
         <% end %>
@@ -105,17 +120,21 @@
         <% if current_game.players.size >= 6 %>
         <li>
           <div class="col-md-3 avatar">
-            <p>name</p>
         <img src="http://placehold.it/150x100" alt="Responsive image" />
+    <p>
+          <%= @player_details['6'] %>
+          </p>
       </div>
         </li>
         <% end %>
 
-        <% if current_game.players.size == 8 %>
+        <% if current_game.players.size >= 8 %>
         <li>
           <div class="col-md-3 avatar">
-            <p>name</p>
         <img src="http://placehold.it/150x100"  alt="Responsive image"  />
+    <p>
+          <%= @player_details['8'] %>
+          </p>
       </div>
         </li>
         <% end %>
@@ -181,11 +200,11 @@ Make a rule and whenever someone breaks that rule from now on they must sip.
     }
 //-->
 </script>
-  <p>QUIT GAME</p>
-  <button type="button" class="btn btn-danger"></button>
+<!--   <p>QUIT GAME</p>
+  <button type="button" class="btn btn-danger" href="/end_game"></button>
   <p>START OVER</p>
   <button type="button" class="btn btn-danger"></button>
-
+ -->
   </aside>
 
 </main>

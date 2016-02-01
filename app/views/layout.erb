@@ -34,10 +34,14 @@
         <ul class="nav navbar-nav">
           <li><a href="#">Add More Players</a></li>
           <li><a href="#">Game Instructions</a></li>
+          <% end %>
+          <% if @players %>
+  <a class="btn btn-danger" href="/end_game">QUIT GAME</a>
+  <% end %>
         </ul>
        </div>
       </nav>
-      <% end %>
+      
   <%= yield %>
 </body>
 </html>
