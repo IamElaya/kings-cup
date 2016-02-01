@@ -77,7 +77,11 @@ post '/turn' do
   end
 end 
 
+get '/rules' do 
+  erb :rules
+end
+
 get '/end_game' do
-    session.reset
+    session.clear
     redirect '/'
   end

@@ -23,55 +23,7 @@
 
   <title></title>
 </head>
-<body>
-<% if current_game %>
-
-
-
-
-      <nav class="navbar navbar-inverse">
-      <href="#"><img id="rotate" class="nav-head" src="/images/Kheart.svg"></a>
-  <p class="instructions" role="presentation"><a href="#" onclick="toggle_visibility('foo');">Game Instructions</a> <div id="foo" style="display: none">
-<h4>Ace: Snake-Eyes</h4>
- Call anyone snake eyes in the game. No one can look at the person with snake eyes until another ace is picked or they have a drink.
-<br>
-<h4>2: YOU</h4> 
- Drawing player picks a person from the circle who has to sip 
-<br>
-<h4>3: ME</h4>
-Drawing player has to sip!
-<br>
-<h4>4: Whores</h4>
- All girls have a sip
-<br>
-<h4>5: Bust-A-Jive</h4>
-Pick a dance move. The next person has to do that dance move and add to it. This continues until someone screws up and must sip  
-<br>
-<h4>6: Dicks</h4>
-All the guys have a sip 
-<br>
-<h4>7: Seven-Heaven</h4>
- All players point a finger to the sky.Last player to do must sip
-<br>
-<h4>8: Mate</h4>
-Whenever you drink they must sip 
-<br>
-<h4>9: Nine-Rhyme</h4>
-Pick a word. Go around the circle with each person rhyming. First person to repeat a word or not have a word must sip. 
-<br>
-<h4>10: Categories</h4>
-Pick a category.Go around the circle naming things in that category.First person to repeat or not answer must sip
-<br>
-<h4>Jack: Never-Have-I-Ever</h4>
- everybody puts up 3 to 5 fingers and drawing player says something they haven't done before and then go around the circle. The first person with all their fingers down must sip 
-<br>
-<h4>Queen: Question-Master</h4>
-Whenever you ask a question to someone they must answer with a question or they sip 
-<br>
-<h4>Kings Cup!</h4>
-Make a rule and whenever someone breaks that rule from now on they must sip.
-</div>
-</ul>
+<body>     
   <script type="text/javascript">
 <!--
     function toggle_visibility(id) {
@@ -83,11 +35,6 @@ Make a rule and whenever someone breaks that rule from now on they must sip.
     }
 //-->
 </script>
-
-  </p>
-  <p class="end_game" ><a href="/end_game">End Game</a></p>
-</nav>
-      <% end %>
   <%= yield %>
 </body>
 </html>
