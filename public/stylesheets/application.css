@@ -30,17 +30,7 @@ img .avatar {
   vertical-align: middle;
   margin: auto;
 }
-/*#sidebar {
-  background: black;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  top: 80px;
-  width: 150px;
-  border: 1 solid;
-  opacity:.50;
-  color: white;
-}*/
+
 body > footer {
   background: blue;
   bottom: 0;

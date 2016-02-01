@@ -7,7 +7,6 @@ select.form-control {
   background-color: #ffffe5;
   font-size: 20px;
 }
-
 body .welcome {
 position: fixed;
  width: 100%;
@@ -17,8 +16,6 @@ position: fixed;
  background-repeat: no-repeat;
  background-size: cover;
 }
-
-
  .navbar-inverse{
   background: none;
   border: outset;
@@ -27,9 +24,7 @@ position: fixed;
   border-radius: 10px;
  /* margin-right: -20px;
   margin-left: -20px;*/
-
 }
-
 .navbar-nav li a:visited {
   color: black;
 }
