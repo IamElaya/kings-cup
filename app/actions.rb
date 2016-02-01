@@ -82,6 +82,6 @@ get '/rules' do
 end
 
 get '/end_game' do
-    session.clear
+    session.reset
     redirect '/'
   end
