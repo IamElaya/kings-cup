@@ -86,11 +86,7 @@
         <li>
           <div class="col-md-3 card">
             <img class="card1" src="/<%= @turn.card.url %>" style="width:95px"></img>
-            <% @players.each do |player| %>
-             <% if player.id == current_game.current_player %>
-             <p><%= player.name %></p>
-             <% end %>
-             <% end %>
+             <p><%= current_player_picking %></p>
       </div>
         </li>
         <% end %>

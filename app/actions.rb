@@ -4,6 +4,15 @@ helpers do
   def current_game 
     Game.find { |u| u[:id] == session[:game_id] } if session[:game_id]
   end
+
+  def current_player_picking
+    @players = Player.all
+       @players.each do |player|
+      if player.id == current_game.current_player
+        return player.name
+      end
+  end
+end
 end
 # Homepage (Root path)
 get '/' do
