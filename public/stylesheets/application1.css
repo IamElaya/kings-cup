@@ -43,9 +43,9 @@ p.end_game{
   transform: rotate(10deg) scale(1.1);
 }*/
 .btn-success {
-  color: #008000;
+  color: black;
   margin-top: 10px;
-  background-color: #ffff00;
+  background-color: #FBB117;
   margin-bottom: 20px;
 }
 
@@ -87,7 +87,7 @@ p.end_game{
   100%     {bottom:0;}
 }
 .bg-1 { 
-    background-color:  #00b300;  /*Green */
+    background-color:  #45DD49;  /*Green */
     color: #ffffff;
     background-repeat: no-repeat;
     background-position: static;
@@ -156,5 +156,11 @@ div#drunk-dogs {
   top: 200px;
 }
 h4 {
-  color:red;
+  color:#45DD49;
 }
+#plus {
+  width: 20px;
+  height: 20px;
+}
+
+
