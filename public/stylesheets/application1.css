@@ -25,11 +25,11 @@ p.instructions{
   right: 20px;
   top: 10px;
 }
-p.add-players{
+p.end_game{
   max-height: 45px;
   position: fixed;
-  left: 40px;
-  top: 10px;
+  right: 20px;
+  top: 35px;
 }
 
 .nav-head {
@@ -91,15 +91,17 @@ p.add-players{
     color: #ffffff;
     background-repeat: no-repeat;
     background-position: static;
+    background-size: cover;
  }
 div.welcome {
-position: absolute;
+position: fixed;
  width: 100%;
  height: 100%;
- background: url(/images/Deck-of-Cards.jpg) no-repeat center center;
-/* z-index: 100;*/
- background-repeat: no-repeat;
+ background: url(/images/Deck-of-Cards.jpg) 50% no-repeat;
  background-size: cover;
+ bottom: 0;
+ left: 0;
+ right: 0;
 }
 #logo {
   position: absolute;

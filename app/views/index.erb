@@ -1,7 +1,6 @@
 
 <div class="welcome">
   <div class="container-fluid bg-1 text-center">
-
     <% if !current_game %> 
       <h3>Welcome To The Kings Cup Game</h3>
       <div class="bounce"> 
@@ -25,9 +24,10 @@
         <button class="btn btn-success btn" type="submit"><span class= "glyphicon glyphicon-glass" aria-hidden="true"></span>Lets Get Drunk!</button>
       </form>
     <% end %>
+      </div>
+</div>
     <% if current_game %>
       <h3 class="animated zoomIn">Enter Your Names to Start</h3>
-      <img class="logo-image" src="/images/logo.png">
       <form id="names" action="/game/players" method="post">
         <% current_game.players.each_with_index do |player, idx| %>
           <div class="form-group">
@@ -40,5 +40,4 @@
         </p>
       </form>
     <% end %>
-  </div>
-</dive>
+

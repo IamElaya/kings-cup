@@ -13,30 +13,25 @@
 </head>
 </header> -->
 <main>
-
   <section id="gameboard">
     <div class="row">
       <div id="top_row">
         <ul>
-
           <% if current_game.players.size >= 1 %>
           <li>
             <div class="col-md-3 avatar">
           <img src="/stylesheets/images/don_burks.jpg" alt="Responsive image" id="avatar" /> 
-         <p> 
-         <%= @players.find(1).name %>
-         </p>
+         <h4><%= @players.find(1).name %></h4>
         </div>
           </li>
           <% end %>
-
            <% if current_game.players.size >= 3 %>
           <li>
             <div class="col-md-3 avatar">
-          <img src="/stylesheets/images/davidvandusen.jpg" alt="Responsive image"/>
+          <img src="/stylesheets/images/davidvandusen.jpg" alt="Responsive image" id="avatar"/>
 
            <p> 
-           <%= @players.find(3).name %>
+           <h4><%= @players.find(3).name %></h4>
            </p>
         </div>
           </li>
@@ -45,10 +40,8 @@
           <% if current_game.players.size >= 5 %>
           <li>
             <div class="col-md-3 avatar">
-          <img src="/stylesheets/images/rosy.jpg" alt="Responsive image" />
-           <p> 
-           <%= @players.find(5).name %>
-           </p>
+          <img src="/stylesheets/images/rosy.jpg" alt="Responsive image" id="avatar" />
+           <h4><%= @players.find(5).name %><h4>
         </div>
           </li>
           <% end %>
@@ -56,11 +49,8 @@
           <% if current_game.players.size >= 7 %>
           <li>
             <div class="col-md-3 avatar">
-          <img src="/stylesheets/images/jeremy_shaki.jpg" alt="Responsive image" />
-
-           <p> 
-           <%= @players.find(7).name %>
-           </p>
+          <img src="/stylesheets/images/jeremy_shaki.jpg" alt="Responsive image" id="avatar" />
+           <h4><%= @players.find(7).name %></h4>
         </div>
           </li>
           <% end %>
@@ -86,7 +76,6 @@
         <li>
           <div class="col-md-3 card">
             <img class="card1" src="/<%= @turn.card.url %>" style="width:95px"></img>
-             <p><%= current_player_picking %></p>
       </div>
         </li>
         <% end %>
@@ -99,49 +88,44 @@
 
       <% if current_game.players.size >= 2 %>
         <li>
+         <h4><%= @players.find(2).name %></h4>
           <div class="col-md-3 avatar">
-        <img src="/stylesheets/images/sherman.jpg" alt="Responsive image" /> 
+        <img src="/stylesheets/images/sherman.jpg" alt="Responsive image" id="avatar" /> 
 
-         <p> 
-         <%= @players.find(2).name %>
-         </p>
+
       </div>
         </li>
         <% end %>
 
         <% if current_game.players.size >= 4 %>
         <li>
+         <h4><%= @players.find(4).name %></h4>
           <div class="col-md-3 avatar">
-        <img src="/stylesheets/images/khurram_virani.jpg"  alt="Responsive image"/>
+        <img src="/stylesheets/images/khurram_virani.jpg"  alt="Responsive image" id="avatar"/>
 
-         <p> 
-         <%= @players.find(4).name %>
-         </p>
+
       </div>
         </li>
         <% end %>
 
         <% if current_game.players.size >= 6 %>
         <li>
-          <div class="col-md-3 avatar">
-        <img src="/stylesheets/images/monica.jpg" alt="Responsive image" />
-        <p> 
-        <%= @players.find(6).name %>
-        </p>
 
+        <h4><%= @players.find(6).name %></h4>
+
+          <div class="col-md-3 avatar">
+        <img src="/stylesheets/images/monica.jpg" alt="Responsive image" id="avatar" />
       </div>
         </li>
         <% end %>
 
         <% if current_game.players.size >= 8 %>
         <li>
-          <div class="col-md-3 avatar">
-        <img src="/stylesheets/images/sylvia_rayner.jpg"  alt="Responsive image"  />
-
-         <p> 
+        <h4>
          <%= @players.find(8).name %>
-         </p>
-
+         </h4>
+          <div class="col-md-3 avatar">
+        <img src="/stylesheets/images/sylvia_rayner.jpg"  alt="Responsive image" id="avatar"  />
       </div>
         </li>
         <% end %>
@@ -152,77 +136,19 @@
   </section>
 
 
-
-  <aside id="sidebar">
-    <ul class="nav nav-tabs">
-  <li role="presentation"><a href="#" onclick="toggle_visibility('foo');">RULES:</a>
-<div id="foo" style="display: none">
-<h4>Ace: Snake-Eyes</h4>
- Call anyone snake eyes in the game. No one can look at the person with snake eyes until another ace is picked or they have a drink.
-<br>
-<h4>2: YOU</h4> 
- Drawing player picks a person from the circle who has to sip 
-<br>
-<h4>3: ME</h4>
-Drawing player has to sip!
-<br>
-<h4>4: Whores</h4>
- All girls have a sip
-<br>
-<h4>5: Bust-A-Jive</h4>
-Pick a dance move. The next person has to do that dance move and add to it. This continues until someone screws up and must sip  
-<br>
-<h4>6: Dicks</h4>
-All the guys have a sip 
-<br>
-<h4>7: Seven-Heaven</h4>
- All players point a finger to the sky.Last player to do must sip
-<br>
-<h4>8: Mate</h4>
-Whenever you drink they must sip 
-<br>
-<h4>9: Nine-Rhyme</h4>
-Pick a word. Go around the circle with each person rhyming. First person to repeat a word or not have a word must sip. 
-<br>
-<h4>10: Categories</h4>
-Pick a category.Go around the circle naming things in that category.First person to repeat or not answer must sip
-<br>
-<h4>Jack: Never-Have-I-Ever</h4>
- everybody puts up 3 to 5 fingers and drawing player says something they haven't done before and then go around the circle. The first person with all their fingers down must sip 
-<br>
-<h4>Queen: Question-Master</h4>
-Whenever you ask a question to someone they must answer with a question or they sip 
-<br>
-<h4>Kings Cup!</h4>
-Make a rule and whenever someone breaks that rule from now on they must sip.
-</div>
-</ul>
-  <script type="text/javascript">
-<!--
-    function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
-    }
-//-->
-</script>
-<!--   <p>QUIT GAME</p>
-  <button type="button" class="btn btn-danger" href="/end_game"></button>
-  <p>START OVER</p>
-  <button type="button" class="btn btn-danger"></button>
- -->
-  </aside>
-
-
 </main>
 
 <footer>
+<div class = "well rules">
   <div class = "rule">
-<p>PLACEHOLDLER: FOR CURRENT RULE!</p>
+    <% @players.each do |player| %>
+   <% if player.id == current_game.current_player %>
+   <p><%= player.name %>'s <strong>turn!</strong></p>
+   <% end %>
+   <% end %>
 <% if @turn.card %>
-<%= @turn.card.rule %>
+<strong><%= @turn.card.rule %></strong>
+  </div>
   </div>
   <% end %>
 </footer>

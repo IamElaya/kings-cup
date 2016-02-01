@@ -30,16 +30,31 @@ img .avatar {
   vertical-align: middle;
   margin: auto;
 }
-
-body > footer {
-  background: blue;
-  bottom: 0;
-  height: 50px;
-  left: 0;
-  position: fixed;
-  right: 0;
+#avatar {
+  height: 100px;
+  width: 100px;
 }
 
+footer {
+  background: url(/images/footer.png) no-repeat;
+  background-size: cover;
+ position: fixed;
+ bottom: 1px;
+ right: 0px;
+ left: 0px;
+ height: 85px;
+ max-height: 100px;
+ background-color: rgba(0, 0, 0, 0.5);
+
+}
+.rules {
+  background-color: rgba(0, 0, 0, 0.5);
+  font-color: black;
+  position: fixed;
+  left: 150px;
+  right: 150px;
+
+}
 #avatar.current {
   background-color: blue;
 }
