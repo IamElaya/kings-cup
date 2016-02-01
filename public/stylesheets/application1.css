@@ -48,7 +48,10 @@ p.end_game{
   background-color: #FBB117;
   margin-bottom: 20px;
 }
-
+h3#index_names {
+    color: #45DD49;
+font-style: oblique;
+}
 .bounce {
   position:relative;
   float: left;
@@ -105,19 +108,15 @@ div.welcome {
 }
 div.welcome2 {
  background-size: cover;
-
 }
-
 #logo {
   position: absolute;
   max-height: 300px;
 }
-
 #logo2 {
   max-height: 300px;
   margin-right: 50%;
 }
-
 #name {
   max-width: 30%;
   background: #ffffe5;

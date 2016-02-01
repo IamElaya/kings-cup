@@ -12,7 +12,7 @@
         <img id="logo2" src="/images/beer.png" >
       </div>
       <form action='/game' method = "post">
-        <label class="player-number" for="sel1">Select Number Of Players: </label>
+        <strong><label class="player-number" for="sel1">Select Number Of Players: </label></strong>
         <select name="num_of_players" class="form-control" id="sel1">
           <option value="2">2</option>
           <option value="3">3</option>
@@ -31,10 +31,10 @@
     <% if current_game %>
     <div class="welcome2">
 <div class="col-md-8">
-      <h3 class="animated zoomIn">Enter Your Names to Start</h3>
+      <h3 class="animated zoomIn" id="index_names">Enter Your Names to Start</h3>
       <form id="names" action="/game/players" method="post">
         <% current_game.players.each_with_index do |player, idx| %>
-          <div class="form-group">
+          <div class="form-group" id="players-index">
             <label for="player-<%= player.id %>-name">Player <%= idx + 1 %></label>
             <input id="name" size="100" id="player-<%= player.id %>-name" name="<%= player.id %>" />
           </div>
@@ -44,7 +44,8 @@
         </p>
       </form>
           <div id="drunk-dogs">
-      <img src="https://media.giphy.com/media/PvZ2jLjFofH4Q/giphy.gif">
+          <img src="/images/drunkdogs.gif">
+<!--       <img src="https://media.giphy.com/media/PvZ2jLjFofH4Q/giphy.gif"> -->
     </div>
     <% end %>
     </div>

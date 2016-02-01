@@ -87,6 +87,6 @@ post '/turn' do
 end 
 
 get '/end_game' do
-    session.reset
     redirect '/'
+    erb :index
   end
