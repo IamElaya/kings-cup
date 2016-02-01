@@ -171,17 +171,15 @@ h1, h2, h3, h4, h5, h6 {
 
  #wrapper {
   background: #00b300;
-  width: 120%;
-  height:130%;
   font-family: NotethisRegular, Verdana, Arial, sans-serif;
   font-weight: bold;
-  font-size:80%;
-  width:1740px;
+  width:120%;
+  height:100%;
   margin:0 auto;
-  text-align:center;
   padding-top:50px;
   top: 0;
   left: 0;
+  overflow: auto;
 }
 
 /* Index Card Styling */
@@ -192,9 +190,11 @@ ul#index_cards {
 }
   
 ul#index_cards li {
+  text-align:center;
+  font-size:80%;
   background:url(/images/card_bg.jpg) repeat;
-  height:500px;
-  width:130px;
+  height:550px;
+  width:120px;
   display:block;
   float:left;
   border:1px solid #666;
