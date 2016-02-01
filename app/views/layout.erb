@@ -93,8 +93,12 @@ Make a rule and whenever someone breaks that rule from now on they must sip.
 //-->
 </script>
 
+
   </p>
   <p class="add-players" ><a href="#">Add More Players</a></p>
+    <% if @players %>
+  <a class="btn btn-danger" href="/end_game">QUIT GAME</a>
+  <% end %>
 </nav>
       <% end %>
   <%= yield %>
