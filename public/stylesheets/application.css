@@ -17,8 +17,6 @@
     top:130px;
 }
 
-
-
 .row li {
   float: left;
     width: 25%;
@@ -64,7 +62,7 @@ div.well.rules {
     font-color: #0000EE;
   position: fixed;
   left: 240px;
-  right: 200px;
+  right: 100px;
   top: 10px;
   background-color:rgba(0, 0, 0, 0.5)
 }
@@ -76,9 +74,11 @@ div.well.rule {
   top: 10px;
   opacity: 1;
   max-height: 100px;
+  max-width: 600px;
 }
 .rule p {
 color: #38c0f4;
+max-height: 300px;
 
 }
 #avatar.current {
