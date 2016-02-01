@@ -85,32 +85,24 @@
     <div class="row">
     <div id="small-img">
       <ul>
-
       <% if current_game.players.size >= 2 %>
         <li>
          <h4><%= @players.find(2).name %></h4>
           <div class="col-md-3 avatar">
         <img src="/stylesheets/images/sherman.jpg" alt="Responsive image" id="avatar" /> 
-
-
       </div>
         </li>
         <% end %>
-
         <% if current_game.players.size >= 4 %>
         <li>
          <h4><%= @players.find(4).name %></h4>
           <div class="col-md-3 avatar">
         <img src="/stylesheets/images/khurram_virani.jpg"  alt="Responsive image" id="avatar"/>
-
-
       </div>
         </li>
         <% end %>
-
         <% if current_game.players.size >= 6 %>
         <li>
-
         <h4><%= @players.find(6).name %></h4>
 
           <div class="col-md-3 avatar">
@@ -118,7 +110,6 @@
       </div>
         </li>
         <% end %>
-
         <% if current_game.players.size >= 8 %>
         <li>
         <h4>
@@ -134,8 +125,6 @@
     </div>
   </div>
   </section>
-
-
 <div class = "well rules">
   <div class = "rule">
     <% @players.each do |player| %>
