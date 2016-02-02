@@ -21,7 +21,7 @@
           <li>
             <div class="col-md-3 avatar">
           <img src="/stylesheets/images/don_burks.jpg" alt="Responsive image" id="avatar" /> 
-         <h4><%= @players.find(1).name %></h4>
+         <h4><%= current_game.players.first.name %></h4>
         </div>
 
           </li>
@@ -32,7 +32,7 @@
           <img src="/stylesheets/images/davidvandusen.jpg" alt="Responsive image" id="avatar"/>
 
            <p> 
-           <h4><%= @players.find(3).name %></h4>
+           <h4><%= current_game.players.third.name %></h4>
            </p>
         </div>
           </li>
@@ -42,7 +42,7 @@
           <li>
             <div class="col-md-3 avatar">
           <img src="/stylesheets/images/rosy.jpg" alt="Responsive image" id="avatar" />
-           <h4><%= @players.find(5).name %><h4>
+           <h4><%= current_game.players.fifth.name %><h4>
         </div>
           </li>
           <% end %>
@@ -51,7 +51,7 @@
           <li>
             <div class="col-md-3 avatar">
           <img src="/stylesheets/images/jeremy_shaki.jpg" alt="Responsive image" id="avatar" />
-           <h4><%= @players.find(7).name %></h4>
+           <h4><%= current_game.players[7].name %></h4>
         </div>
           </li>
           <% end %>
@@ -87,7 +87,7 @@
       <ul>
       <% if current_game.players.size >= 2 %>
         <li>
-         <h4><%= @players.find(2).name %></h4>
+         <h4><%= current_game.players.second.name %></h4>
           <div class="col-md-3 avatar">
         <img src="/stylesheets/images/sherman.jpg" alt="Responsive image" id="avatar" /> 
       </div>
@@ -95,7 +95,7 @@
         <% end %>
         <% if current_game.players.size >= 4 %>
         <li>
-         <h4><%= @players.find(4).name %></h4>
+         <h4><%= current_game.players.fourth.name %></h4>
           <div class="col-md-3 avatar">
         <img src="/stylesheets/images/khurram_virani.jpg"  alt="Responsive image" id="avatar"/>
       </div>
@@ -103,7 +103,7 @@
         <% end %>
         <% if current_game.players.size >= 6 %>
         <li>
-        <h4><%= @players.find(6).name %></h4>
+        <h4><%= current_game.players[6].name %></h4>
 
           <div class="col-md-3 avatar">
         <img src="/stylesheets/images/monica.jpg" alt="Responsive image" id="avatar" />
@@ -113,7 +113,7 @@
         <% if current_game.players.size >= 8 %>
         <li>
         <h4>
-         <%= @players.find(8).name %>
+         <%= current_game.players.last.name %>
          </h4>
           <div class="col-md-3 avatar">
         <img src="/stylesheets/images/sylvia_rayner.jpg"  alt="Responsive image" id="avatar"  />
@@ -127,8 +127,8 @@
   </section>
 <div class = "well rules">
   <div class = "rule">
-    <% @players.each do |player| %>
-   <% if player.id == current_game.current_player %>
+    <% current_game.players.each_with_index do |player, index| %>
+   <% if index == current_game.current_player %>
    <strong><%= player.name %>'s turn!</strong><br>
    <% end %>
    <% end %>

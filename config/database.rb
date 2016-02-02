@@ -11,7 +11,7 @@ configure do
     if development?
       set :database, {
         adapter: "sqlite3",
-        database: 'db/db.sqlite3'
+        database: DATABASE
       }
     else
       set :database, ENV['DATABASE_URL']

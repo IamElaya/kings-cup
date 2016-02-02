@@ -54,7 +54,8 @@ post '/game/players' do
   # @turn.pick_a_card
   if current_game.save 
     if @turn.save 
-      @players = Player.all 
+
+      @players = current_game.players
       erb :game
     end 
   end
@@ -81,7 +82,7 @@ post '/turn' do
   # @turn.increment_player_id
   @turn.pick_a_card
   if @turn.save
-    @players = current_game.players.all  
+    @players = current_game.players 
     erb :game
   end
 end 
