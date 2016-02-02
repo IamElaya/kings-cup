@@ -21,3 +21,7 @@ group :test do
   gem 'rspec'
   gem 'database_cleaner'
 end
+
+group :production do
+  gem 'pg'
+end
