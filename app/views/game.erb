@@ -128,7 +128,7 @@
 <div class = "well rules">
   <div class = "rule">
     <% current_game.players.each_with_index do |player, index| %>
-   <% if index == current_game.current_player %>
+   <% if index == (current_game.current_player.to_i - 1) %>
    <strong><%= player.name %>'s turn!</strong><br>
    <% end %>
    <% end %>
