@@ -1,43 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/stylesheets/normalize.css">
+  <head>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
     <link rel="stylesheet" href="/stylesheets/bootstrap.css">
     <link rel="stylesheet" href="/stylesheets/animate.min.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="/stylesheets/application.css">
-  <link rel="stylesheet" href="/stylesheets/application1.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <link rel="stylesheet" href="/stylesheets/application1.css">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/javascript/application.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/javascript/application.js"></script>
 
-  <title></title>
-</head>
-<body>
-
-
-  <script type="text/javascript">
-<!--
-    function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
-    }
-//-->
-</script>
-
-  <%= yield %>
-</body>
+    <title></title>
+  </head>
+  <body>
+    <% if current_game %>
+        <nav class="navbar navbar-inverse">
+          <href="#"><img id="rotate" class="nav-head" src="/images/Kheart.svg"></a>
+          <img class="logo-image" src="/images/logo.png">
+          <href="#"><img id="rotate" class="nav-head" src="/images/Kheart.svg"></a>
+          <p class="instructions" role="presentation"><a href="#" onclick="toggle_visibility('foo');">
+            <img src="/images/plus-sign2.png" id="plus">
+              </button>Rules</a>
+            <div id="foo" style="display: none">
+                <h4>Ace: Snake-Eyes</h4>
+                 <p>
+                 Call anyone snake eyes in the game. No one can look at the person with snake eyes until another ace is picked or they have a drink.
+                 </p>
+                <h4>2: YOU</h4> 
+                <p>
+                 Drawing player picks a person from the circle who has to sip 
+                </p>
+                <h4>3: ME</h4>
+                <p>
+                  Drawing player has to sip!
+                </p>
+                <h4>4: Whores</h4>
+                 <p>
+                 All girls have a sip
+                 </p>
+                <h4>5: Bust-A-Jive</h4>
+                <p>
+                Pick a dance move. The next person has to do that dance move and add to it. This continues until someone screws up and must sip 
+                </p> 
+                <h4>6: Dicks</h4>
+                <p>
+                All the guys have a sip 
+                </p>
+                <h4>7: Seven-Heaven</h4>
+                <p>
+                 All players point a finger to the sky.Last player to do must sip
+                 </p>
+                <h4>8: Mate</h4>
+                <p>
+                Whenever you drink they must sip 
+                </p>
+                <h4>9: Nine-Rhyme</h4>
+                <p>
+                  Pick a word. Go around the circle with each person rhyming. First person to repeat a word or not have a word must sip. 
+                </p>
+                <h4>10: Categories</h4>
+                <p>
+                  Pick a category.Go around the circle naming things in that category.First person to repeat or not answer must sip
+                </p>
+                <h4>Jack: Never-Have-I-Ever</h4>
+                <p>
+                 everybody puts up 3 to 5 fingers and drawing player says something they haven't done before and then go around the circle. The first person with all their fingers down must sip 
+                </p>
+                <h4>Queen: Question-Master</h4>
+                <p>
+                Whenever you ask a question to someone they must answer with a question or they sip 
+                </p>
+                <h4>Kings Cup!</h4>
+                <p>
+                  Make a rule and whenever someone breaks that rule from now on they must sip.
+                </p>
+            </div>
+            <script type="text/javascript">
+              function toggle_visibility(id)
+               {
+              var e = document.getElementById(id);
+                if(e.style.display == 'block')
+                    e.style.display = 'none';
+                else
+                  e.style.display = 'block';
+               }
+            </script>
+            <p action="end_game" method = "post" ><a href="/end_game">End Game</a>
+            </p>
+          </nav>
+     <% end %>
+    <%= yield %>
+  </body>
 </html>

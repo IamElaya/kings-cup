@@ -1,4 +1,4 @@
-#gameboard { 
+/*#gameboard { 
   background: url(/stylesheets/images/poker_table.jpg) 50% 50%;
   background-size: cover;
     width: 100%;
@@ -7,7 +7,16 @@
     display: inline-block;
     vertical-align: middle;
     margin: auto;
+}*/
+#gameboard { 
+  background: url(/stylesheets/images/poker_table.jpg) 50% 50%;
+  background-size: cover;
+    width: 100%;
+    max-width: 1024px;
+    position: fixed;
+    top:130px;
 }
+
 .row li {
   float: left;
     width: 25%;
@@ -30,20 +39,54 @@ img .avatar {
   vertical-align: middle;
   margin: auto;
 }
-
-body > footer {
-  background: blue;
-  bottom: 0;
-  height: 50px;
-  left: 0;
-  position: fixed;
-  right: 0;
+#avatar {
+  height: 100px;
+  width: 100px;
 }
 
+/*footer {
+  background: url(/images/footer.png) no-repeat;
+  background-size: cover;
+ position: fixed;
+ bottom: 1px;
+ right: 0px;
+ left: 0px;
+ height: 65px;
+ max-height: 100px;
+ background-color: rgba(0, 0, 0, 0.5);
+ padding-top: 30;
+ opacity: 0.50;
+
+}*/
+div.well.rules {
+    font-color: #0000EE;
+  position: fixed;
+  left: 240px;
+  right: 100px;
+  top: 10px;
+  background-color:rgba(0, 0, 0, 0.5)
+}
+div.well.rule {
+    font-color: #0000EE;
+  position: fixed;
+  left: 220px;
+  right: 200px;
+  top: 10px;
+  opacity: 1;
+  max-height: 100px;
+  max-width: 600px;
+}
+.rule p {
+color: #38c0f4;
+max-height: 300px;
+
+}
 #avatar.current {
   background-color: blue;
 }
-
+strong {
+  color: #45DD49 ;
+}
 button.card_picker
 {
   background: transparent;
@@ -55,8 +98,8 @@ button.card_picker
   position: fixed;
   bottom: 0;
   right: 0;
-  top: 50px;
-  width: 300px;
+  top: 130px;
+  width: 250px;
   border: 1 solid;
   opacity:.50;
   color: white;
@@ -68,4 +111,12 @@ form #names {
 }
 /*/*<-- Bahar's style -->*/
 
-
+h1 {
+  font-size: 5.9vw;
+}
+h2 {
+  font-size: 3.0vh;
+}
+p {
+  font-size: 2vmin;
+}
