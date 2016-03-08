@@ -1,6 +1,5 @@
-   
-def create_deck
-   field_names = ['rank','suit','rule']
+  def create_deck
+   field_names = ['rank','suit','rule','url']
     failure_count = 0 
     Card.transaction do 
       File.open("db/data/cards.csv").each do |line|
