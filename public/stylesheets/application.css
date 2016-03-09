@@ -11,10 +11,11 @@
 #gameboard { 
   background: url(/stylesheets/images/poker_table.jpg) 50% 50%;
   background-size: cover;
+    height: auto;
     width: 100%;
-    max-width: 1024px;
+    max-width: 100%;
     position: fixed;
-    top:130px;
+    top:33%;
 }
 
 .row li {
