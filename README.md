@@ -1,10 +1,6 @@
-Sinatra
+King's Cup
 =============
 
-Brought to you by Lighthouse Labs
+King's Cup is an app where one can play the popular drinking game "King's Cup".
 
-## Getting Started
-
-1. `bundle install`
-2. `shotgun -p 3000 -o 0.0.0.0`
-3. Visit `http://localhost:3000/` in your browser
+Created using HTML5, CSS, JavaScript, and the sinatra framework.
